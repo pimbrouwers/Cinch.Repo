@@ -10,7 +10,7 @@ The outcome of what's outlined below is to be left with an implementation of `ID
 ```c#
 public interface IMyDbService : IDbService
 {
-	ISqlConnectionFactory ConnectionFactory { get; }
+    ISqlConnectionFactory ConnectionFactory { get; }
     ISomeRepo SomeRepo { get; }
 }
 
