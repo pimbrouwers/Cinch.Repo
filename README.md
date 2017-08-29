@@ -42,9 +42,7 @@ public class MyDbService : IMyDbService
 ### 2. Implement `IRepo`
 
 ```c#
-public interface ISomeRepo : IRepo<SomeModel, int>
-{
-}
+public interface ISomeRepo : IRepo<SomeModel, int> {}
 
 public sealed class SomeRepo : Repo<SomeModel, int>, ISomeRepo 
 {
