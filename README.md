@@ -16,8 +16,8 @@ public interface IMyDbService : IDbService
 
 public class MyDbService : IMyDbService 
 {
-	readonly ISqlConnectionFactory connectionFactory;
-	ISomeRepo someRepo;
+    readonly ISqlConnectionFactory connectionFactory;
+    ISomeRepo someRepo;
 	
 	public MyDbService (ISqlConnectionFactory connectionFactory)
 	{
