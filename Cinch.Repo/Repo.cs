@@ -59,29 +59,26 @@ namespace Cinch.Repo
                 return await conn.DeleteAsync(items);
             }
         }
-    }
 
-    public static class RepoExtensons
-    {
-        public async static Task<int> Execute<TEntity, TKey>(this Repo<TEntity, TKey> repo, string sql, object param, CommandType commandType = CommandType.Text) where TEntity : class, IRecord<TKey>, new()
+        public async Task<int> Execute(string sql, object param = null, CommandType commandType = CommandType.Text)
         {
-            using (var conn = await repo.connectionFactory.CreateConnection())
+            using (var conn = await connectionFactory.CreateConnection())
             {
                 return await conn.ExecuteAsync(sql, param, commandType: commandType);
             }
         }
 
-        public async static Task<IEnumerable<TEntity>> Query<TEntity, TKey>(this Repo<TEntity, TKey> repo, string sql, object param, CommandType commandType = CommandType.Text) where TEntity : class, IRecord<TKey>, new()
+        public async Task<IEnumerable<TEntity>> Query(string sql, object param = null, CommandType commandType = CommandType.Text)
         {
-            using (var conn = await repo.connectionFactory.CreateConnection())
+            using (var conn = await connectionFactory.CreateConnection())
             {
                 return await conn.QueryAsync<TEntity>(sql, param, commandType: commandType);
             }
         }
 
-        public async static Task<TEntity> First<TEntity, TKey>(this Repo<TEntity, TKey> repo, string sql, object param, CommandType commandType = CommandType.Text) where TEntity : class, IRecord<TKey>, new()
+        public async Task<TEntity> First(string sql, object param = null, CommandType commandType = CommandType.Text)
         {
-            return (await repo.Query<TEntity, TKey>(sql, param, commandType)).FirstOrDefault();
+            return (await Query(sql, param, commandType)).FirstOrDefault();
         }
     }
 }
