@@ -10,14 +10,13 @@ The outcome of what's outlined below is to be left with an implementation of `ID
 ```c#
 public interface IMyDbService : IDbService
 {
-	ISqlConnectionFactory ConnectionFactory { get; }
     ISomeRepo SomeRepo { get; }
 }
 
 public class MyDbService : IMyDbService 
 {
-	readonly ISqlConnectionFactory connectionFactory;
-	ISomeRepo someRepo;
+    readonly ISqlConnectionFactory connectionFactory;
+    ISomeRepo someRepo;
 	
 	public MyDbService (ISqlConnectionFactory connectionFactory)
 	{
