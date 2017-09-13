@@ -38,12 +38,23 @@ public class MyDbService : IMyDbService
 }
 ```
 
-### 2. Implement `IRepo`
+### 2a. Implement `IRepo` (Read & Write)
 
 ```c#
 public interface ISomeRepo : IRepo<SomeModel, int> {}
 
 public sealed class SomeRepo : Repo<SomeModel, int>, ISomeRepo 
+{
+	public SomeRepo(ISqlConnectionFactory connectionFactory) : base(connectionFactory) {}
+}
+```
+
+### 2b. OR Implemebt `IReadableRepo` (Read-only)
+
+```c#
+public interface ISomeRepo : IReadableRepo<SomeModel, int> {}
+
+public sealed class SomeRepo : ReadableRepo<SomeModel, int>, ISomeRepo 
 {
 	public SomeRepo(ISqlConnectionFactory connectionFactory) : base(connectionFactory) {}
 }
