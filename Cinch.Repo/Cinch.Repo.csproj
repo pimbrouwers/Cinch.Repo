@@ -9,6 +9,10 @@
     <RepositoryType>Git</RepositoryType>
     <PackageTags>dapper orm crud sql</PackageTags>
     <Description>Get an easily customizable backend running quickly using Dapper.Contrib</Description>
+    <PackageReleaseNotes>Removed ConnectionString setter</PackageReleaseNotes>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

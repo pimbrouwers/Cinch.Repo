@@ -5,7 +5,7 @@ namespace Cinch.Repo.Interfaces
 {
     public interface ISqlConnectionFactory
     {
-        string ConnectionString { get; set; }
+        string ConnectionString { get; }
         Task<SqlConnection> CreateConnection();
     }
 }
