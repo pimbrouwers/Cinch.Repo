@@ -1,5 +1,4 @@
-﻿using Cinch.Repo.Interfaces;
-using Dapper.Contrib.Extensions;
+﻿using Dapper.Contrib.Extensions;
 
 namespace Cinch.Repo
 {

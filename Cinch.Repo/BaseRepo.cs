@@ -1,6 +1,4 @@
-﻿using Cinch.Repo.Interfaces;
-
-namespace Cinch.Repo
+﻿namespace Cinch.Repo
 {
     public abstract class BaseRepo
     {

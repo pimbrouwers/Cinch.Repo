@@ -1,5 +1,4 @@
-﻿using Cinch.Repo.Interfaces;
-using Dapper;
+﻿using Dapper;
 using Dapper.Contrib.Extensions;
 using System.Collections.Generic;
 using System.Data;

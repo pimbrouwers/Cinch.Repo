@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Cinch.Repo.Interfaces
+namespace Cinch.Repo
 {
     public interface IRepo<TEntity, in TKey> : IReadableRepo<TEntity, TKey> where TEntity : class, IRecord<TKey>, new()
     {

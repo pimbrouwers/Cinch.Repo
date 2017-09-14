@@ -1,4 +1,4 @@
-﻿namespace Cinch.Repo.Interfaces
+﻿namespace Cinch.Repo
 {
     public interface IDbService
     {

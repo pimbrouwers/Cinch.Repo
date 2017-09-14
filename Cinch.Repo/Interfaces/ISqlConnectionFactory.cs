@@ -1,7 +1,7 @@
 ﻿using System.Data.SqlClient;
 using System.Threading.Tasks;
 
-namespace Cinch.Repo.Interfaces
+namespace Cinch.Repo
 {
     public interface ISqlConnectionFactory
     {
