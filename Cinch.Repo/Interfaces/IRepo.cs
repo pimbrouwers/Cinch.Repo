@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Cinch.Repo
 {
-    public interface IRepo<TEntity, in TKey> : IReadableRepo<TEntity, TKey> where TEntity : class, IRecord<TKey>, new()
+    public interface IRepo<TEntity> : IReadableRepo<TEntity, int> where TEntity : class, IRecord<int>, new()
     {
         Task<int> Insert(TEntity item);
         Task<int> Insert(IEnumerable<TEntity> items);
