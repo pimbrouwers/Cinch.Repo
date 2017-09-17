@@ -1,11 +1,11 @@
-﻿using System.Data.SqlClient;
+﻿using System.Data;
 using System.Threading.Tasks;
 
 namespace Cinch.Repo
 {
-    public interface ISqlConnectionFactory
+    public interface IConnectionFactory
     {
         string ConnectionString { get; }
-        Task<SqlConnection> CreateConnection();
+        Task<IDbConnection> CreateConnection();
     }
 }

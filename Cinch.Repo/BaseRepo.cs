@@ -2,9 +2,9 @@
 {
     public abstract class BaseRepo
     {
-        public readonly ISqlConnectionFactory connectionFactory;
+        public readonly IConnectionFactory connectionFactory;
 
-        public BaseRepo(ISqlConnectionFactory connectionFactory)
+        public BaseRepo(IConnectionFactory connectionFactory)
         {
             this.connectionFactory = connectionFactory;
         }

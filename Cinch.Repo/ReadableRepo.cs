@@ -6,7 +6,7 @@ namespace Cinch.Repo
 {
     public abstract class ReadableRepo<TEntity, TKey> : BaseRepo, IReadableRepo<TEntity, TKey> where TEntity : class
     {
-        public ReadableRepo(ISqlConnectionFactory connectionFactory) : base(connectionFactory) { }
+        public ReadableRepo(IConnectionFactory connectionFactory) : base(connectionFactory) { }
         
         public virtual async Task<TEntity> Get(TKey id)
         {

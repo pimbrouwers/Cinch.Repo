@@ -9,7 +9,7 @@ namespace Cinch.Repo
 {
     public abstract class Repo<TEntity> : ReadableRepo<TEntity, int>, IRepo<TEntity> where TEntity : class, IRecord<int>, new()
     {
-        public Repo(ISqlConnectionFactory connectionFactory) : base(connectionFactory) { }
+        public Repo(IConnectionFactory connectionFactory) : base(connectionFactory) { }
 
         /// <summary>
         /// Insert

@@ -2,6 +2,6 @@
 {
     public interface IDbService
     {
-        ISqlConnectionFactory ConnectionFactory { get; }
+        IConnectionFactory ConnectionFactory { get; }
     }
 }
