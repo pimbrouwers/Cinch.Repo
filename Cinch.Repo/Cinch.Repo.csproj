@@ -10,9 +10,9 @@
     <PackageTags>dapper orm crud sql</PackageTags>
     <Description>Get an easily customizable backend running quickly using Dapper.Contrib. Supports all CRUD operations, excluding listing all items because this tends to be application specific.</Description>
     <PackageReleaseNotes>Removed IReadableRepo.List() because it is too application specific.</PackageReleaseNotes>
-    <AssemblyVersion>1.0.0.5</AssemblyVersion>
-    <FileVersion>1.0.0.5</FileVersion>
-    <Version>1.0.5</Version>
+    <AssemblyVersion>1.0.0.6</AssemblyVersion>
+    <FileVersion>1.0.0.6</FileVersion>
+    <Version>1.0.6</Version>
   </PropertyGroup>
 
   <ItemGroup>
