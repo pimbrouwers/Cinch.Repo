@@ -8,11 +8,11 @@
     <RepositoryUrl>https://github.com/pimbrouwers/Cinch.Repo</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>dapper orm crud sql</PackageTags>
-    <Description>Get an easily customizable backend running quickly using Dapper.Contrib</Description>
-    <PackageReleaseNotes>Int constraint on Repo (not ReadableRepo) because Dapper.Contrib works solely with numeric primary key's.</PackageReleaseNotes>
-    <AssemblyVersion>1.0.0.4</AssemblyVersion>
-    <FileVersion>1.0.0.4</FileVersion>
-    <Version>1.0.4</Version>
+    <Description>Get an easily customizable backend running quickly using Dapper.Contrib. Supports all CRUD operations, excluding listing all items because this tends to be application specific.</Description>
+    <PackageReleaseNotes>Removed IReadableRepo.List() because it is too application specific.</PackageReleaseNotes>
+    <AssemblyVersion>1.0.0.5</AssemblyVersion>
+    <FileVersion>1.0.0.5</FileVersion>
+    <Version>1.0.5</Version>
   </PropertyGroup>
 
   <ItemGroup>

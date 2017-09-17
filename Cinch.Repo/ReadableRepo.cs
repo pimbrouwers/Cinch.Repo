@@ -15,13 +15,6 @@ namespace Cinch.Repo
                 return await conn.GetAsync<TEntity>(id);
             }
         }
-
-        public virtual async Task<IEnumerable<TEntity>> List()
-        {
-            using (var conn = await connectionFactory.CreateConnection())
-            {
-                return await conn.GetAllAsync<TEntity>();
-            }
-        }
+        
     }
 }
