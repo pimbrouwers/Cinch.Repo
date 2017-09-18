@@ -19,7 +19,7 @@ namespace Cinch.Repo
         /// <param name="order"></param>
         /// <param name="predicate"></param>
         /// <returns></returns>
-        public abstract Task<IEnumerable<TEntity>> List(int n, string sort, string order, object predicate = null);
+        public abstract Task<IEnumerable<TEntity>> List(int n, string sort, string order, object max = null, object min = null);
 
         /// <summary>
         /// Get entity by key
