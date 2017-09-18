@@ -11,6 +11,14 @@ namespace Cinch.Repo
     {
         public ReadableRepo(IConnectionFactory connectionFactory) : base(connectionFactory) { }
 
+        /// <summary>
+        /// List entities using keyset paging (https://blog.jooq.org/2013/10/26/faster-sql-paging-with-jooq-using-the-seek-method/)
+        /// </summary>
+        /// <param name="n"></param>
+        /// <param name="sort"></param>
+        /// <param name="order"></param>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
         public abstract Task<IEnumerable<TEntity>> List(int n, string sort, string order, object predicate = null);
 
         /// <summary>
