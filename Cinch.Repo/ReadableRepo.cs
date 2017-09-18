@@ -10,7 +10,14 @@ namespace Cinch.Repo
     public abstract class ReadableRepo<TEntity, TKey> : BaseRepo, IReadableRepo<TEntity, TKey> where TEntity : class
     {
         public ReadableRepo(IConnectionFactory connectionFactory) : base(connectionFactory) { }
-        
+
+        public abstract Task<IEnumerable<TEntity>> List(int n, string sort, string order, object predicate = null);
+
+        /// <summary>
+        /// Get entity by key
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public virtual async Task<TEntity> Get(TKey id)
         {
             using (var conn = await connectionFactory.CreateConnection())
