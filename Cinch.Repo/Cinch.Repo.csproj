@@ -10,9 +10,9 @@
     <PackageTags>dapper orm crud sql</PackageTags>
     <Description>Get an easily customizable backend running quickly using Dapper.Contrib. Supports all CRUD operations, excluding listing all items because this tends to be application specific.</Description>
     <PackageReleaseNotes>Better bi-directional keyset pagination</PackageReleaseNotes>
-    <AssemblyVersion>1.0.0.10</AssemblyVersion>
-    <FileVersion>1.0.0.10</FileVersion>
-    <Version>1.0.10</Version>
+    <AssemblyVersion>1.0.0.11</AssemblyVersion>
+    <FileVersion>1.0.0.11</FileVersion>
+    <Version>1.0.11</Version>
   </PropertyGroup>
 
   <ItemGroup>

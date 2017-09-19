@@ -15,13 +15,11 @@ namespace Cinch.Repo
         /// List entities using bi-directional keyset pagination
         /// </summary>
         /// <param name="n"></param>
-        /// <param name="order" default="asc"></param>
+        /// <param name="sort"></param>
+        /// <param name="order"></param>
         /// <param name="since"></param>
-        /// <returns></returns>
-        /// 
-
-        /////
-        public abstract Task<IEnumerable<TEntity>> List(int n, string order = "asc", object since = null);
+        /// <returns></returns>        
+        public abstract Task<IEnumerable<TEntity>> List(int n, string sort, string order, object since = null);
 
         /// <summary>
         /// Get entity by key
