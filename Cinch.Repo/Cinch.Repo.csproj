@@ -9,10 +9,10 @@
     <RepositoryType>Git</RepositoryType>
     <PackageTags>dapper orm crud sql</PackageTags>
     <Description>Get an easily customizable backend running quickly using Dapper.Contrib. Supports all CRUD operations, excluding listing all items because this tends to be application specific.</Description>
-    <PackageReleaseNotes>Abstract List() added back into IReadableRepo/ReadableRepo</PackageReleaseNotes>
-    <AssemblyVersion>1.0.0.9</AssemblyVersion>
-    <FileVersion>1.0.0.9</FileVersion>
-    <Version>1.0.9</Version>
+    <PackageReleaseNotes>Better bi-directional keyset pagination</PackageReleaseNotes>
+    <AssemblyVersion>1.0.0.10</AssemblyVersion>
+    <FileVersion>1.0.0.10</FileVersion>
+    <Version>1.0.10</Version>
   </PropertyGroup>
 
   <ItemGroup>
