@@ -7,6 +7,14 @@ using System.Threading.Tasks;
 
 namespace Cinch.Repo
 {
+    public class Paginator : IPaginator
+    {
+        public int n { get; set; }
+        public string sort { get; set; }
+        public string order { get; set; }
+        public object since { get; set; }
+    }
+
     public abstract class ReadableRepo<TEntity, TKey> : BaseRepo, IReadableRepo<TEntity, TKey> where TEntity : class
     {
         public ReadableRepo(IConnectionFactory connectionFactory) : base(connectionFactory) { }
@@ -19,7 +27,7 @@ namespace Cinch.Repo
         /// <param name="order"></param>
         /// <param name="since"></param>
         /// <returns></returns>        
-        public abstract Task<IEnumerable<TEntity>> List(int n, string sort, string order, object since = null);
+        public abstract Task<IEnumerable<TEntity>> List(IPaginator pagination);
 
         /// <summary>
         /// Get entity by key
