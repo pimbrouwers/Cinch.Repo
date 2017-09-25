@@ -9,10 +9,10 @@
     <RepositoryType>Git</RepositoryType>
     <PackageTags>dapper orm crud sql</PackageTags>
     <Description>Get an easily customizable backend running quickly using Dapper.Contrib. Supports all CRUD operations, excluding listing all items because this tends to be application specific.</Description>
-    <PackageReleaseNotes>Paginator object parameter</PackageReleaseNotes>
-    <AssemblyVersion>1.0.0.12</AssemblyVersion>
-    <FileVersion>1.0.0.12</FileVersion>
-    <Version>1.0.12</Version>
+    <PackageReleaseNotes>IReadbleRepo methods added</PackageReleaseNotes>
+    <AssemblyVersion>1.0.0.13</AssemblyVersion>
+    <FileVersion>1.0.0.13</FileVersion>
+    <Version>1.0.13</Version>
   </PropertyGroup>
 
   <ItemGroup>

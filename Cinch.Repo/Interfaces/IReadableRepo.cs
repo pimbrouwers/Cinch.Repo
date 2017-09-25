@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 using System.Threading.Tasks;
 
 namespace Cinch.Repo
@@ -15,5 +16,7 @@ namespace Cinch.Repo
     {
         Task<IEnumerable<TEntity>> List(IPaginator pagination);
         Task<TEntity> Get(TKey id);
+        Task<IEnumerable<TEntity>> Query(string sql, object param = null, CommandType commandType = CommandType.Text);
+        Task<TEntity> First(string sql, object param = null, CommandType commandType = CommandType.Text);
     }
 }
