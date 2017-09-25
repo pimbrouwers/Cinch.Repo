@@ -14,6 +14,8 @@ namespace Cinch.Repo
 
     public interface IReadableRepo<TEntity, in TKey> where TEntity : class
     {
+        IConnectionFactory ConnectionFactory { get; }
+
         Task<IEnumerable<TEntity>> List(IPaginator pagination);
         Task<TEntity> Get(TKey id);
         Task<IEnumerable<TEntity>> Query(string sql, object param = null, CommandType commandType = CommandType.Text);

@@ -15,9 +15,14 @@ namespace Cinch.Repo
         public object since { get; set; }
     }
 
-    public abstract class ReadableRepo<TEntity, TKey> : BaseRepo, IReadableRepo<TEntity, TKey> where TEntity : class
+    public abstract class ReadableRepo<TEntity, TKey> : IReadableRepo<TEntity, TKey> where TEntity : class
     {
-        public ReadableRepo(IConnectionFactory connectionFactory) : base(connectionFactory) { }
+        public ReadableRepo(IConnectionFactory connectionFactory)
+        {
+            ConnectionFactory = connectionFactory;
+        }
+
+        public IConnectionFactory ConnectionFactory { get; }
 
         /// <summary>
         /// List entities using bi-directional keyset pagination
@@ -36,7 +41,7 @@ namespace Cinch.Repo
         /// <returns></returns>
         public virtual async Task<TEntity> Get(TKey id)
         {
-            using (var conn = await connectionFactory.CreateConnection())
+            using (var conn = await ConnectionFactory.CreateConnection())
             {
                 return await conn.GetAsync<TEntity>(id);
             }
@@ -51,7 +56,7 @@ namespace Cinch.Repo
         /// <returns>Enumerable of TEntity</returns>
         public async Task<IEnumerable<TEntity>> Query(string sql, object param = null, CommandType commandType = CommandType.Text)
         {
-            using (var conn = await connectionFactory.CreateConnection())
+            using (var conn = await ConnectionFactory.CreateConnection())
             {
                 return await conn.QueryAsync<TEntity>(sql, param, commandType: commandType);
             }

@@ -17,7 +17,7 @@ namespace Cinch.Repo
         /// <returns>Numeric Id of record inserted</returns>
         public virtual async Task<int> Insert(TEntity item)
         {
-            using (var conn = await connectionFactory.CreateConnection())
+            using (var conn = await ConnectionFactory.CreateConnection())
             {
                 return await conn.InsertAsync(item);
             }
@@ -30,7 +30,7 @@ namespace Cinch.Repo
         /// <returns>Number of records inserted</returns>
         public virtual async Task<int> Insert(IEnumerable<TEntity> items)
         {
-            using (var conn = await connectionFactory.CreateConnection())
+            using (var conn = await ConnectionFactory.CreateConnection())
             {
                 return await conn.InsertAsync(items);
             }
@@ -43,7 +43,7 @@ namespace Cinch.Repo
         /// <returns>true if updated, false if not found or not modified</returns>
         public virtual async Task<bool> Update(TEntity item)
         {
-            using (var conn = await connectionFactory.CreateConnection())
+            using (var conn = await ConnectionFactory.CreateConnection())
             {
                 return await conn.UpdateAsync(item);
             }
@@ -56,7 +56,7 @@ namespace Cinch.Repo
         /// <returns>true if updated, false if not found or not modified</returns>
         public virtual async Task<bool> Update(IEnumerable<TEntity> items)
         {
-            using (var conn = await connectionFactory.CreateConnection())
+            using (var conn = await ConnectionFactory.CreateConnection())
             {
                 return await conn.UpdateAsync(items);
             }
@@ -69,7 +69,7 @@ namespace Cinch.Repo
         /// <returns>true if deleted, false if not found</returns>
         public virtual async Task<bool> Delete(TEntity item)
         {
-            using (var conn = await connectionFactory.CreateConnection())
+            using (var conn = await ConnectionFactory.CreateConnection())
             {
                 return await conn.DeleteAsync(item);
             }
@@ -82,7 +82,7 @@ namespace Cinch.Repo
         /// <returns>true if deleted, false if not found</returns>
         public virtual async Task<bool> Delete(IEnumerable<TEntity> items)
         {
-            using (var conn = await connectionFactory.CreateConnection())
+            using (var conn = await ConnectionFactory.CreateConnection())
             {
                 return await conn.DeleteAsync(items);
             }
@@ -97,7 +97,7 @@ namespace Cinch.Repo
         /// <returns>Number of rows affected</returns>
         public async Task<int> Execute(string sql, object param = null, CommandType commandType = CommandType.Text)
         {
-            using (var conn = await connectionFactory.CreateConnection())
+            using (var conn = await ConnectionFactory.CreateConnection())
             {
                 return await conn.ExecuteAsync(sql, param, commandType: commandType);
             }
