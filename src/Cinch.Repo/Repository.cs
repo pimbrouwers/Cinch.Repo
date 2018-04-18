@@ -20,14 +20,14 @@ namespace Cinch.Repo
 
     public ITable<TEntity> Table { get; }
 
-    public async Task Execute(string sql, object param = null, IDbTransaction transaction = null, int? commandTimeout = null, CommandType commandType = CommandType.Text, IDbConnection conn = null)
+    public async Task<int> Execute(string sql, object param = null, IDbTransaction transaction = null, int? commandTimeout = null, CommandType commandType = CommandType.Text, IDbConnection conn = null)
     {
-      if (conn != null) await conn.ExecuteAsync(sql, param, transaction, commandTimeout, commandType);
-      else if (transaction != null) await transaction.Connection.ExecuteAsync(sql, param, transaction, commandTimeout, commandType);
+      if (conn != null) return await conn.ExecuteAsync(sql, param, transaction, commandTimeout, commandType);
+      else if (transaction != null) return await transaction.Connection.ExecuteAsync(sql, param, transaction, commandTimeout, commandType);
 
       using (conn = await ConnectionFactory.CreateOpenConnection())
       {
-        await conn.ExecuteAsync(sql, param, transaction, commandTimeout, commandType);
+        return await conn.ExecuteAsync(sql, param, transaction, commandTimeout, commandType);
       }
     }
 
