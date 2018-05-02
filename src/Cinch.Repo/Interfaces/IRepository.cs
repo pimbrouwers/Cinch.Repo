@@ -9,8 +9,6 @@ namespace Cinch.Repo.Interfaces
   {
     IDbConnectionFactory ConnectionFactory { get; }
 
-    ITable<TEntity> Table { get; }
-
     Task<int> Execute(string sql, object param = null, IDbTransaction transaction = null, int? commandTimeout = null, CommandType commandType = CommandType.Text, IDbConnection conn = null);
 
     Task<T> ExecuteScalar<T>(string sql, object param = null, IDbTransaction transaction = null, int? commandTimeout = null, CommandType commandType = CommandType.Text, IDbConnection conn = null);

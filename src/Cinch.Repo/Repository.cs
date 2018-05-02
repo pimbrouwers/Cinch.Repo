@@ -161,19 +161,5 @@ namespace Cinch.Repo
     {
       return (await Query(sql, map, param, transaction, commandType)).FirstOrDefault();
     }
-
-    private DynamicParameters FieldParameters(TEntity entity) => MapDynamicParameters(Table.Mapper.ReadPropertyValues(entity, Table.Fields));
-
-    private DynamicParameters KeyFieldParameter(TEntity entity) => MapDynamicParameters(Table.Mapper.ReadPropertyValues(entity, new string[] { Table.Key }));
-
-    private DynamicParameters MapDynamicParameters(Dictionary<string, object> properties)
-    {
-      var dynamicParams = new DynamicParameters();
-
-      foreach (var property in properties)
-        dynamicParams.Add(property.Key, property.Value);
-
-      return dynamicParams;
-    }
   }
 }

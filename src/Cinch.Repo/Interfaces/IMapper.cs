@@ -8,7 +8,5 @@ namespace Cinch.Repo.Interfaces
   {
     IEnumerable<PropertyInfo> Properties { get; }
     Type Type { get; }
-
-    Dictionary<string, object> ReadPropertyValues(TEntity entity, IEnumerable<string> properties);
   }
 }
