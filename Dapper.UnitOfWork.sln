@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cinch.Repo", "src\Cinch.Repo\Cinch.Repo.csproj", "{0A7C1A12-FB09-4AA9-BE9E-3D89279FE17E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dapper.UnitOfWork", "src\Dapper.UnitOfWork\Dapper.UnitOfWork.csproj", "{0A7C1A12-FB09-4AA9-BE9E-3D89279FE17E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F35BF56D-DA86-400C-A58D-3FFF38CB5878}"
 	ProjectSection(SolutionItems) = preProject
