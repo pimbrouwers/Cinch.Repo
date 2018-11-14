@@ -137,9 +137,9 @@ namespace Dapper.UnitOfWork
     /// <param name="field"></param>
     /// <param name="value"></param>
     /// <returns>Entities or null</returns>
-    protected async Task<IEnumerable<TEntity>> FindBy(string field, object value, int top = 10)
+    protected async Task<IEnumerable<TEntity>> FindBy(string field, object value)
     {
-      return await Query(sqlMapper.ReadSql.Top(top).Where($"{field} = @value").ToSql(), new { value });
+      return await Query(sqlMapper.ReadSql.Where($"{field} = @value").ToSql(), new { value });
     }
 
     /// <summary>
@@ -149,9 +149,9 @@ namespace Dapper.UnitOfWork
     /// <param name="field"></param>
     /// <param name="value"></param>
     /// <returns>Entities or null</returns>
-    protected async Task<IEnumerable<TEntity>> FindLike(string field, object value, int top = 10)
+    protected async Task<IEnumerable<TEntity>> FindLike(string field, object value)
     {
-      return await Query(sqlMapper.ReadSql.Top(top).Where($"{field} like @value").ToSql(), new { value });
+      return await Query(sqlMapper.ReadSql.Where($"{field} like @value").ToSql(), new { value });
     }
 
     /// <summary>
@@ -162,7 +162,7 @@ namespace Dapper.UnitOfWork
     /// <returns>Entities or null</returns>
     protected async Task<TEntity> FirstBy(string field, object value)
     {
-      return (await FindBy(field, value, 1)).FirstOrDefault();
+      return await QueryFirstOrDefault(sqlMapper.ReadSql.Where($"{field} = @value").ToSql(), new { value });
     }
 
     /// <summary>
@@ -174,7 +174,7 @@ namespace Dapper.UnitOfWork
     /// <returns>Entities or null</returns>
     protected async Task<TEntity> FirstLike(string field, object value)
     {
-      return (await FindLike(field, value, 1)).FirstOrDefault();
+      return await QueryFirstOrDefault(sqlMapper.ReadSql.Where($"{field} like @value").ToSql(), new { value });
     }
 
     /// <summary>
