@@ -27,7 +27,7 @@ public interface IPostRepository
 //PostRepository.cs
 public class PostRepository : AbstractRepository<Post>, IPostRepository
 {
-  public PostRepositry(
+  public PostRepository(
     IDbContext dbContext,
     ISqlMapper<Post> sqlMapper
   ) : base(dbContext, sqlMapper)
